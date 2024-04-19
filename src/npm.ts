@@ -6,7 +6,7 @@ import findCacheDir from "find-cache-dir";
 import { pino } from "pino";
 import { temporaryDirectory } from "tempy";
 import which from "which";
-import pkg from "../package.json";
+import pkg from "../package.json" assert { type: "json" };
 
 declare global {
 	namespace NodeJS {

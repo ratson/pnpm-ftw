@@ -1,5 +1,5 @@
 import { execa } from "execa";
-import { assert, describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 
 describe("npm", () => {
 	it("--version", async () => {
@@ -10,5 +10,11 @@ describe("npm", () => {
 		const { stdout: pnpmVersion } = await execa("pnpm", ["--version"]);
 
 		expect(npmVersion).toEqual(pnpmVersion);
+	});
+
+	it("lib", async () => {
+		const { stdout: npmVersion } = await execa("./lib/npm.js", ["--version"]);
+
+		expect(npmVersion).to.be.string;
 	});
 });

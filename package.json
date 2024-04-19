@@ -10,7 +10,7 @@
 		"prepare": "npm run build",
 		"build": "tsc -b",
 		"lint": "biome check src",
-		"test": "npm run lint && vitest --run"
+		"test": "npm run build && npm run lint && vitest --run"
 	},
 	"dependencies": {
 		"execa": "^8.0.1",
