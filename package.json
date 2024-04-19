@@ -1,6 +1,6 @@
 {
 	"name": "pnpm-ftw",
-	"version": "0.0.1",
+	"version": "0.0.0",
 	"description": "Replace npm executable with pnpm",
 	"type": "module",
 	"bin": {
@@ -33,6 +33,13 @@
 		"typescript": "~5.4.5",
 		"vitest": "^1.5.0"
 	},
+	"engines": {
+		"node": ">=18.0.0"
+	},
+	"files": ["/lib", "/src"],
+	"author": "Ratson",
+	"license": "MIT",
+	"repository": "ratson/pnpm-ftw",
 	"lint-staged": {
 		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": "biome check --apply --no-errors-on-unmatched",
 		"*": "biome check --no-errors-on-unmatched --files-ignore-unknown=true"

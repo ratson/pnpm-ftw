@@ -4,5 +4,6 @@
 		"rootDir": "src",
 		"outDir": "lib",
 		"resolveJsonModule": true
-	}
+	},
+	"include": ["src/**/*"]
 }
