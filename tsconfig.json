@@ -1,0 +1,8 @@
+{
+	"extends": ["@tsconfig/node18", "@tsconfig/strictest"],
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "lib",
+		"resolveJsonModule": true
+	}
+}

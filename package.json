@@ -1,0 +1,43 @@
+{
+	"name": "pnpm-ftw",
+	"version": "0.0.1",
+	"description": "Replace npm executable with pnpm",
+	"type": "module",
+	"bin": {
+		"npm": "./lib/npm.js"
+	},
+	"scripts": {
+		"prepare": "npm run build",
+		"build": "tsc -b",
+		"lint": "biome check src",
+		"test": "npm run lint && vitest --run"
+	},
+	"dependencies": {
+		"execa": "^8.0.1",
+		"find-cache-dir": "^5.0.0",
+		"pino": "^8.20.0",
+		"pino-pretty": "^11.0.0",
+		"tempy": "^3.1.0",
+		"which": "^4.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.7.0",
+		"@tsconfig/node18": "^18.2.4",
+		"@tsconfig/strictest": "^2.0.5",
+		"@types/find-cache-dir": "^3.2.1",
+		"@types/node": "^20.12.7",
+		"@types/which": "^3.0.3",
+		"lint-staged": "^15.2.2",
+		"simple-git-hooks": "^2.11.1",
+		"tsx": "^4.7.2",
+		"typescript": "~5.4.5",
+		"vitest": "^1.5.0"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": "biome check --apply --no-errors-on-unmatched",
+		"*": "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "npx lint-staged"
+	}
+}
