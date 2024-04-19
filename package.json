@@ -1,6 +1,6 @@
 {
 	"name": "pnpm-ftw",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Replace npm executable with pnpm",
 	"type": "module",
 	"bin": {
